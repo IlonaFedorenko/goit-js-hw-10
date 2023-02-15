@@ -22,7 +22,6 @@ const inputHandler = e => {
 
   fetchCountries(textInput)
     .then(data => {
-      console.log(data);
       if (data.length > 10) {
         Notify.info('Too many matches found. Please enter a more specific name');
         return;
@@ -65,7 +64,7 @@ const createInfoMarkup = data => {
       }</h1>
       <p>Capital: ${capital}</p>
       <p>Population: ${population}</p>
-      <p>Languages: ${Object.values(languages)}</p>`,
+      <p>Languages: ${Object.values(languages).join(', ')}</p>`,
   );
 };
 
